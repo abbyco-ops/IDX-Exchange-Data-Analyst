@@ -221,3 +221,7 @@ __marimo__/
 .DS_Store
 csv_files/
 py_files/
+
+# Concatenated data
+concatenated_residential_listings.csv
+concatenated_residential_sold.csv
