@@ -216,3 +216,11 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# .csv and .py files
+.DS_Store
+csv_files/
+py_files/
+
+# CSV data
+*.csv
