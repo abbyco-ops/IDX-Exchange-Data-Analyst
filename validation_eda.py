@@ -1,16 +1,8 @@
 import pandas as pd
-'''
-sold = pd.read_csv("concatenated_residential_sold.csv")
-listings = pd.read_csv("concatenated_residential_listings.csv")
-
-print("Sold shape:", sold.shape)
-print("Listings shape:", listings.shape)
-
-'''
 
 print("🚀 Loading data...")
-sold = pd.read_csv("concatenated_listings_all.csv", low_memory=False)
-listings = pd.read_csv("concatenated_sold_all.csv", low_memory=False)
+sold = pd.read_csv("concatenated_sold_all.csv", low_memory=False)
+listings = pd.read_csv("concatenated_listings_all.csv", low_memory=False)
 
 ### Dataset Understanding 
 
@@ -61,9 +53,6 @@ def missing_value_report(df, name):
 
     print(f"\n--- Missing Value Report: {name} ---")
     print(report)
-
-    print(f"\nColumns with >90% missing values:")
-    print(report[report["missing_percent"] > 90])
 
     high_missing = report[report["missing_percent"] > 90]
 
@@ -138,7 +127,7 @@ for column in key_numeric_fields:
     plt.show()
 
     plt.figure(figsize=(8, 5))
-    plt.hist(listings[column].dropna())
+    plt.boxplot(listings[column].dropna())
     plt.title(f"Listings - {column} Boxplot")
     plt.ylabel(column)
     plt.show()
