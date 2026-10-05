@@ -224,3 +224,7 @@ py_files/
 
 # CSV data
 *.csv
+
+# png and plots
+plots/
+*.png
