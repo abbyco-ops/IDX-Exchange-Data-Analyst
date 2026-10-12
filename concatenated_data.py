@@ -75,7 +75,7 @@ def process_datasets():
         assert len(master_df) == individual_row_sum, "Row count mismatch after concatenation!"
 
         # Save the complete unfiltered dataset
-        all_output_filename = f"concatenated_{category}_all.csv"
+        all_output_filename = os.path.join(data_dir, f"concatenated_{category}_all.csv")
         master_df.to_csv(all_output_filename, index=False)
         
         print(f"SUCCESS: Saved unfiltered dataset to '{all_output_filename}'\n")
@@ -91,7 +91,7 @@ def process_datasets():
             print(f"[Count Check] Rows AFTER 'Residential' filter: {len(filtered_df)}")
  
             # 5. Save the final clean file outside your hidden folder
-            output_filename = f"concatenated_residential_{category}.csv"
+            output_filename = os.path.join(data_dir, f"concatenated_residential_{category}.csv")
             filtered_df.to_csv(output_filename, index=False)
             print(f"SUCCESS: Saved clean dataset to '{output_filename}'\n")
         else:

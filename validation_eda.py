@@ -6,8 +6,8 @@ import os                                   # add near the other imports
 os.makedirs("plots", exist_ok=True)         # add after the imports
 
 print("Yoo gimme a sec, loading data...")
-sold = pd.read_csv("concatenated_sold_all.csv", low_memory=False)
-listings = pd.read_csv("concatenated_listings_all.csv", low_memory=False)
+sold = pd.read_csv("csv_files/concatenated_sold_all.csv", low_memory=False)
+listings = pd.read_csv("csv_files/concatenated_listings_all.csv", low_memory=False)
 
 pd.set_option("display.float_format", "{:,.2f}".format)
 pd.set_option("display.width", 200)
