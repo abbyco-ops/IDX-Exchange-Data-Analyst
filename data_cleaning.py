@@ -59,7 +59,7 @@ for col in present(sold, numeric_fields):
         print(f"{col}: {newly_missing} non-numeric values turned to NaN")
  
  # remove unnecessary columns (>90% empty columns)
-print("\n--- 3. Drop unecessary columns ---")
+print("\n--- 3. Drop unnecessary columns ---")
 missing_pct = sold.isna().mean() * 100
 high_missing = [c for c in sold.columns if missing_pct[c] > 90 and c not in core_fields]
 single_value = [c for c in sold.columns
