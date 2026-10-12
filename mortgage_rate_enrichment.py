@@ -1,8 +1,8 @@
 import pandas as pd
 import os
 
-sold = pd.read_csv("csv_files/concatenated_sold_all.csv", low_memory=False)
-listings = pd.read_csv("csv_files/concatenated_listings_all.csv", low_memory=False)
+sold = pd.read_csv("csv_files/concatenated_residential_sold.csv", low_memory=False)
+listings = pd.read_csv("csv_files/concatenated_residential_listings.csv", low_memory=False)
 
 # Step 1 – Fetch the mortgage rate data from FRED
 url = "https://fred.stlouisfed.org/graph/fredgraph.csv?id=MORTGAGE30US"
