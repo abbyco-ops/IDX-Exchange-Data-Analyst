@@ -84,8 +84,8 @@ def missing_value_report(df, name):
 sold_missing = missing_value_report(sold, "Sold")
 listings_missing = missing_value_report(listings, "Listings")
 
-sold_missing.to_csv("sold_missing_value_report.csv")
-listings_missing.to_csv("listings_missing_value_report.csv")
+sold_missing.to_csv("csv_files/sold_missing_value_report.csv")
+listings_missing.to_csv("csv_files/listings_missing_value_report.csv")
 
 sold_drop = sold_missing[sold_missing["missing_percent"] > 90].index.difference(key_numeric_fields)
 listings_drop = listings_missing[listings_missing["missing_percent"] > 90].index.difference(key_numeric_fields)
@@ -104,8 +104,8 @@ print(sold.shape)
 
 # Kept Fields based on Missing Value Analysis
 
-sold.to_csv("sold_residential_filtered.csv", index=False)
-listings.to_csv("listings_residential_filtered.csv", index=False)
+sold.to_csv("csv_files/sold_residential_filtered.csv", index=False)
+listings.to_csv("csv_files/listings_residential_filtered.csv", index=False)
 
 ### Numeric Distribution Analysis
 
@@ -138,8 +138,8 @@ listings_distribution_summary = dist_summary(
     "Listings"
 )
 
-sold_distribution_summary.to_csv("sold_distribution_summary.csv")
-listings_distribution_summary.to_csv("listings_distribution_summary.csv")
+sold_distribution_summary.to_csv("csv_files/sold_distribution_summary.csv")
+listings_distribution_summary.to_csv("csv_files/listings_distribution_summary.csv")
 
 ### Generate Histograms and Boxplots
 
@@ -220,7 +220,7 @@ listings_outliers = outlier_summary(listings, key_numeric_fields)
 print(sold_outliers)
 
 # csv's
-sold_outliers.to_csv("sold_outlier_summary.csv")
-listings_outliers.to_csv("listings_outlier_summary.csv")
+sold_outliers.to_csv("csv_files/sold_outlier_summary.csv")
+listings_outliers.to_csv("csv_files/listings_outlier_summary.csv")
 
-sold_distribution_summary.loc[deliverable_numeric_fields].to_csv("sold_distribution_summary_required3.csv")
+sold_distribution_summary.loc[deliverable_numeric_fields].to_csv("csv_files/sold_distribution_summary_required3.csv")
