@@ -228,3 +228,6 @@ py_files/
 # png and plots
 plots/
 *.png
+
+# txt files
+*.txt
