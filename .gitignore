@@ -222,7 +222,11 @@ __marimo__/
 csv_files/
 py_files/
 
+
 # CSV data (extra precaution)
+
+# CSV data
+
 *.csv
 
 # png and plots
@@ -230,7 +234,9 @@ plots/
 *.png
 
 # txt files
+
 *.txt
 
 # In case school district files end up elsewhere
 DistrictAreas2425.*
+*.txt

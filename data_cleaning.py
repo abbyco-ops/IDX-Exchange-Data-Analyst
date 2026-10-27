@@ -3,7 +3,7 @@
 # Cleans BOTH enriched datasets from the mortgage rate step:
 #   csv_files/sold_with_mortgage_rates.csv      -> csv_files/sold_cleaned.csv
 #   csv_files/listings_with_mortgage_rates.csv  -> csv_files/listings_cleaned.csv
-
+#
 # The same steps run on both. The differences for listings:
 #   - Listings include Active, Expired and Withdrawn records, which never have a
 #     CloseDate or ClosePrice, so those rows are NOT removed. Instead a listing must
@@ -11,6 +11,8 @@
 #   - The "always invalid" price rule uses ListPrice for listings and ClosePrice for sold.
 #   - Duplicate listing IDs keep the latest status change, since a listing can show up
 #     in more than one monthly file as its status changes.
+
+# For each dataset it saves: <name>_cleaned.csv, <name>_geo_quality_summary.csv, <name>_cleaning_log.csv
  
 import pandas as pd
  
